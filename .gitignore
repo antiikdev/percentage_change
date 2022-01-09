@@ -1,0 +1,17 @@
+# C ignores
+*.Makefile
+*.mk
+*.project
+*.txt
+
+# Object files
+*.o
+
+# Executables
+*.exe
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
