@@ -18,7 +18,7 @@
  * @return percentage change
  */
 double calculatePercentageChange(double *x, double *y) {
-	double r = (*y / *x) * 100;
+	double r = (1 -(*y / *x)) * 100;
 	return r;
 }
 
@@ -30,12 +30,12 @@ double calculatePercentageChange(double *x, double *y) {
 int main(void)
 {
 	// first example for testing
-	printf("Program calculates examples of percentage changes, example:");
+	printf("Program calculates examples of percentage changes, example:\n");
 	double x = 100;
 	double y = 80;
 	double result = 0;
 	result = calculatePercentageChange(&x, &y);
-	printf("Original points: %lf, new points: %lf, equals %.2lf %% change\n",x,y,result);
+	printf("Original points: %.0lf, new points: %.0lf, equals %.2lf %% change\n",x,y,result);
 	
 	// Main to ask user input
 	
