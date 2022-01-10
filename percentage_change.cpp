@@ -9,6 +9,8 @@
  * @version 9 Jan 2022
  */
 #include <stdio.h>
+#include <iostream>
+using namespace std;
 
 
 /**
@@ -17,11 +19,36 @@
  * @param y new point value
  * @return percentage change
  */
-double calculatePercentageChange(double *start, double *end) {
+double calculatePercentageChange(double *start, double *end)
+{
 	double r = 0;
 	if ( *start > *end ) r = (1 -(*end / *start)) * 100;
 	if ( *start < *end ) r = ((*end - *start) / *start) * 100;
 	return r;
+}
+
+
+void testFunction()
+{
+	cout << "Test completed succesfully!\n";
+}
+
+
+int userMenu(int *choice)
+{
+	cout << "Choose 1: Test, 2: Quit >" ;
+	cin >> *choice;
+	
+	switch(*choice)
+	{
+		case 1: // Test
+		testFunction();
+		return 1;
+		
+		case 2: // Exit
+		return 0; 
+	}
+	return 0;
 }
 
 
@@ -41,7 +68,10 @@ int main(void)
 	printf("Orig. points: %.0lf, new points: %.0lf, has %.2lf %% change\n",end,start,newResult);
 	
 	// Main to ask user input
-	
-	
+	int userChoice = 1;
+	while (userChoice > 0)
+		{
+			userChoice = userMenu(&userChoice);
+		}
 	return 0;
 }
