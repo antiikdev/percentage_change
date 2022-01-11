@@ -3,8 +3,8 @@
  * how the results are not equal between to changes.
  * @example Change from x point to y point and back to x point.
  * @todo (dev log for possible improvements):
- * - Menu for user input
- * - print (random) scale with volatility and percentage changes
+ * - ONGOING: Menu: input for changes in three time points and calc. percentages
+ * - Print (random) scale with points, volatility and percentage changes
  * @author www.antiik.dev, https://github.com/antiikdev
  * @version 9 Jan 2022
  */
@@ -28,15 +28,32 @@ double calculatePercentageChange(double *start, double *end)
 }
 
 
+/**
+ * @brief tests menu function with cout print
+ */
 void testFunction()
 {
 	cout << "Test completed succesfully!\n";
 }
 
 
+/**
+ * @brief calculates two points percentage changes 
+ * based on user input.
+ */
+void calculateTwoUserInputs() {
+	// TODO: finalize
+}
+
+
+/**
+ * @brief Menu for user to select functions
+ * @param choice made by the user
+ * @return 0 if exit and quit program, 1 continue
+ */
 int userMenu(int *choice)
 {
-	cout << "Choose 1: Test, 2: Quit >" ;
+	cout << "Choose 1: Test, 2: Two points, 3: Quit >" ;
 	cin >> *choice;
 	
 	switch(*choice)
@@ -45,7 +62,11 @@ int userMenu(int *choice)
 		testFunction();
 		return 1;
 		
-		case 2: // Exit
+		case 2: // Three time points
+		calculateTwoUserInputs();
+		return 1;
+		
+		case 3: // Exit
 		return 0; 
 	}
 	return 0;
@@ -59,6 +80,7 @@ int userMenu(int *choice)
 int main(void)
 {
 	// first example for testing
+	// TODO: move to "example method"
 	printf("Program calculates percentage changes, example:\n");
 	double start = 100, end = 80;
 	double result = 0, newResult = 0;
