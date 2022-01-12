@@ -3,7 +3,8 @@
  * how the results are not equal between to changes.
  * @example Change from x point to y point and back to x point.
  * @todo (dev log for possible improvements):
- * - ONGOING: Menu: input for changes in three time points and calc. percentages
+ * - ONGOING: user input to calculate % changes in three different time points
+ * - dynamic table to add time points
  * - Print (random) scale with points, volatility and percentage changes
  * @author www.antiik.dev, https://github.com/antiikdev
  * @version 9 Jan 2022
@@ -29,11 +30,17 @@ double calculatePercentageChange(double *start, double *end)
 
 
 /**
- * @brief tests menu function with cout print
+ * @brief calculates example of two points percentage difference
  */
-void testFunction()
+void calculateExample()
 {
-	cout << "Test completed succesfully!\n";
+	printf("Program calculates percentage changes, example:\n");
+	double start = 100, end = 80;
+	double result = 0, newResult = 0;
+	result = calculatePercentageChange(&start, &end);
+	printf("Orig. points: %.0lf, new points: %.0lf, has %.2lf %% change\n",start,end,result);
+	newResult = calculatePercentageChange(&end, &start);
+	printf("Orig. points: %.0lf, new points: %.0lf, has %.2lf %% change\n",end,start,newResult);
 }
 
 
@@ -53,13 +60,13 @@ void calculateTwoUserInputs() {
  */
 int userMenu(int *choice)
 {
-	cout << "Choose 1: Test, 2: Two points, 3: Quit >" ;
+	cout << "Choose 1: Print Example, 2: Calculate three points difference, 3: Quit >" ;
 	cin >> *choice;
 	
 	switch(*choice)
 	{
-		case 1: // Test
-		testFunction();
+		case 1: // Print example
+		calculateExample();
 		return 1;
 		
 		case 2: // Three time points
@@ -74,22 +81,11 @@ int userMenu(int *choice)
 
 
 /**
- * @brief Main for testing and user input
+ * @brief Main to start the calculator and menu
  * @return 0 end
  */
 int main(void)
 {
-	// first example for testing
-	// TODO: move to "example method"
-	printf("Program calculates percentage changes, example:\n");
-	double start = 100, end = 80;
-	double result = 0, newResult = 0;
-	result = calculatePercentageChange(&start, &end);
-	printf("Orig. points: %.0lf, new points: %.0lf, has %.2lf %% change\n",start,end,result);
-	newResult = calculatePercentageChange(&end, &start);
-	printf("Orig. points: %.0lf, new points: %.0lf, has %.2lf %% change\n",end,start,newResult);
-	
-	// Main to ask user input
 	int userChoice = 1;
 	while (userChoice > 0)
 		{
