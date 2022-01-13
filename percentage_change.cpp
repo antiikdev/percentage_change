@@ -50,6 +50,12 @@ void calculateExample()
  */
 void calculateTwoUserInputs() {
 	// TODO: finalize
+	double number1 = 0, number2 = 0, result1 = 0, result2 = 0;
+	cout << "Enter two numbers to calculate % change difference (e.g. 10 5) >";
+	cin >> number1 >> number2;
+	result1 = calculatePercentageChange(&number1, &number2);
+	result2 = calculatePercentageChange(&number2, &number1);
+	cout << "Change down " << result1 << " %, change up " << result2 << " %" << endl;
 }
 
 
@@ -60,7 +66,7 @@ void calculateTwoUserInputs() {
  */
 int userMenu(int *choice)
 {
-	cout << "Choose 1: Print Example, 2: Calculate three points difference, 3: Quit >" ;
+	cout << "Choose 1: Print example, 2: Calculate two points difference, 3: Quit >";
 	cin >> *choice;
 	
 	switch(*choice)
