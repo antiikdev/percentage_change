@@ -49,7 +49,7 @@ void calculateExample()
  * based on user input.
  */
 void calculateTwoUserInputs() {
-	// TODO: finalize
+	// TODO: testing and wording
 	double number1 = 0, number2 = 0, result1 = 0, result2 = 0;
 	cout << "Enter two numbers to calculate % change difference (e.g. 10 5) >";
 	cin >> number1 >> number2;
@@ -66,7 +66,13 @@ void calculateTwoUserInputs() {
  */
 int userMenu(int *choice)
 {
-	cout << "Choose 1: Print example, 2: Calculate two points difference, 3: Quit >";
+	// TODO: screen flushing/cls/clear
+	// cout << flush; 
+	// system("PAUSE"); // asks "press any key" before continues
+	cout << "1: Print example\n";
+	cout << "2: Calculate two points difference\n";
+	cout << "3: Quit\n";
+	cout << "Enter selection >";
 	cin >> *choice;
 	
 	switch(*choice)
