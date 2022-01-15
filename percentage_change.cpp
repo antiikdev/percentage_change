@@ -3,15 +3,24 @@
  * how the results are not equal between to changes.
  * @example Change from x point to y point and back to x point.
  * @todo (dev log for possible improvements):
- * - ONGOING: user input to calculate % changes in three different time points
  * - dynamic table to add time points
- * - Print (random) scale with points, volatility and percentage changes
+ * - Print (random) scale with points for volatility and percentage changes
  * @author www.antiik.dev, https://github.com/antiikdev
  * @version 9 Jan 2022
  */
 #include <stdio.h>
 #include <iostream>
 using namespace std;
+
+
+class Taulukko {
+	size_t lkm;
+	int *cell;
+	int final;
+	
+	public:
+	
+};
 
 
 /**
