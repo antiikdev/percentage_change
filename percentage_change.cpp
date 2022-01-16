@@ -13,12 +13,35 @@
 using namespace std;
 
 
-class Taulukko {
-	size_t lkm;
-	int *cell;
-	int final;
+class Array {
+	size_t max_size;
+	size_t size;
+	int *index;
+	int last;
 	
-	public:
+	// TODO: check reasoning for memory delets
+	Array(const Array &t) =delete;
+	void operator=(const Array &t) =delete;
+	
+public:
+	
+	Array() {
+		max_size = 0;
+		size = 0;
+		index = {nullptr};
+		last = 0;
+	}
+	
+	Array(size_t maxSize) {
+		this->max_size = maxSize;
+		size = 0;
+		index = 0;
+		last = 0;
+		// new delete   // new [] -  delete []
+		if (max_size > 0) index = new int[maxSize];
+	}
+	
+	  virtual ~Array() { delete[] index; }
 	
 };
 
