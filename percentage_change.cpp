@@ -19,12 +19,11 @@ class Array {
 	int *index;
 	int last;
 	
-	// TODO: check reasoning for memory delets
+	// TODO: check reasoning for memory deletes
 	Array(const Array &t) =delete;
 	void operator=(const Array &t) =delete;
 	
 public:
-	
 	Array() {
 		max_size = 0;
 		size = 0;
@@ -41,7 +40,11 @@ public:
 		if (max_size > 0) index = new int[maxSize];
 	}
 	
-	  virtual ~Array() { delete[] index; }
+	// Delete from memory
+	virtual ~Array() { delete[] index; }
+	
+	// TODO: data input in the array
+	// TODO: other operators needed for the "dynamic array"
 	
 };
 
