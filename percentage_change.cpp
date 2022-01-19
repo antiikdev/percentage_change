@@ -95,6 +95,18 @@ void calculateTwoUserInputs() {
 
 
 /**
+ * @brief Calculates % change of random points in a timeline
+ * and prints a chart of the changes.
+ */
+void calculateRandomChanges() {
+	// TODO: complete
+	// 1 Ask user a range for random numbers
+	// 2 Create an array of random numbers within the range
+	// 3 Print array in a chart with calculated % changes
+}
+
+
+/**
  * @brief Menu for user to select functions
  * @param choice made by the user
  * @return 0 if exit and quit program, 1 continue
@@ -120,7 +132,10 @@ int userMenu(int *choice)
 		calculateTwoUserInputs();
 		return 1;
 		
-		case 3: // Exit
+		case 3: // Random points changes in a timeline
+		calculateRandomChanges();
+		
+		case 4: // Exit
 		return 0; 
 	}
 	return 0;
